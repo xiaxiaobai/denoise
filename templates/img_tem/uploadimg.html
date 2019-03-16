@@ -1,0 +1,11 @@
+<form method="POST" enctype="multipart/form-data">
+{% csrf_token %}
+<input type="file" name="img">
+<button type="submit">上传</button>
+</form>
+{% for item in pic %}
+        <img src="{{ item.img.url }}"><br/>
+    {% endfor %}
+<a href="/show/">RGB图片去噪</a>
+<a href="/showAgain/">暗通道去雾</a>
+
